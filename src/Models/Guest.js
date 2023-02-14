@@ -30,20 +30,27 @@ const schema = new Schema({
     type: Date,
     // required: true
   },
-  shift: {
-    type: String,
-    // required: true
-  },
-  remark: {
-    type: String,
-    // required: true
-  },
-  feedback: {
-    type: String,
-    // required: true
-  },
+  // shift: {
+  //   type: String,
+  //   // required: true
+  // },
+  // remark: {
+  //   type: String,
+  //   // required: true
+  // },
+  // feedback: {
+  //   type: String,
+  //   // required: true
+  // },
   category:{
     type: String,
+  },
+  subcategory:{
+    type: Array,
+  },
+  isComplete: {
+    type: Boolean,
+    default: false,
   },
   createdDate: {
     type: Date,

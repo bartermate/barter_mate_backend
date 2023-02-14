@@ -2,9 +2,9 @@ const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
 const schema = new Schema({
-  name: {
-    type: String,
-    required: true,
+  userId: {
+    type: mongoose.Schema.Types.ObjectId, 
+    ref: 'registration'
   },
   email: {
     type: String,
@@ -14,7 +14,11 @@ const schema = new Schema({
     type: Number,
     // required: true
   },
-  address: {
+  address1: {
+    type: String,
+    // required: true
+  },
+  address2: {
     type: String,
     // required: true
   },
@@ -26,35 +30,20 @@ const schema = new Schema({
     type: String,
     // required: true
   },
-  category:{
+  city: {
     type: String,
-  },
-  subcategory:{
-    type: Array,
-  },
-  pickupDate: {
-    type: Date,
     // required: true
   },
-  // shift: {
-  //   type: String,
-  //   // required: true
-  // },
-  // remark: {
-  //   type: String,
-  //   // required: true
-  // },
-  // feedback: {
-  //   type: String,
-  //   // required: true
-  // },
+  state: {
+    type: String,
+    // required: true
+  },
+  tags:{
+    type: String,
+  },
   createdDate: {
     type: Date,
     default: Date.now,
-  },
-  isComplete: {
-    type: Boolean,
-    default: false,
   },
   isActive: {
     type: Boolean,
@@ -65,6 +54,6 @@ const schema = new Schema({
     default: false,
   },
 });
-const Pickedup = mongoose.model("pickedup", schema);
+const Address = mongoose.model("address", schema);
 
-module.exports = Pickedup;
+module.exports = Address;
